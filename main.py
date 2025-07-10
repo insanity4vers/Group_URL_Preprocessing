@@ -25,5 +25,9 @@ if __name__ == '__main__':
     parser.add_argument('--input', '-i', type=str, default='input.xlsx', help='Input Excel file path')
     parser.add_argument('--output', '-o', type=str, default='group_urls.xlsx', help='Output Excel file path')
     args = parser.parse_args()
-
-    process_excel(args.input, args.output)
+    
+    try:
+        process_excel(args.input, args.output)
+        print(f"Đã xử lý xong và lưu kết quả vào {args.output}")
+    except Exception as e:
+        print(f"Error: {e}")
